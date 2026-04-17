@@ -1,0 +1,37 @@
+name: NFDI organizations and the file formats they use
+description: A list of NFDI organizations and the file formats they use.
+# status: recommended, acceptable, discouraged, harmful, unknown
+# reference_urls: optional, for recommended and acceptable formats, to provide examples of usage within the consortium
+organizations:
+  - name: NFDI4BioImage
+    handle: nfdi4bioimage
+    wikidata: Q113500855
+    uses:
+      - name: OME-TIFF
+        handle: ome-tiff
+        status: acceptable
+        reference_urls:
+          - https://doi.org/10.5281/zenodo.15479606
+      - name: OME-Zarr
+        handle: ome-zarr
+        status: recommended
+        reference_urls:
+          - https://doi.org/10.5281/zenodo.15479606
+
+# YAML-LD context
+
+"@context":
+  "@vocab": https://schema.org/
+  "@base": https://example.org/nfdi_formats/
+  handle:
+    "@id": "@id"
+  reference_urls: "https://schema.org/seeAlso"
+  organizations: "https://schema.org/hasPart"
+  uses: http://www.wikidata.org/entity/P2283 # "uses"
+# status is local
+  status: https://example.org/nfdi_formats/status
+  wikidata:
+    "@id": "https://schema.org/sameAs"
+    "@type": "@id"
+    "@context":
+      "@base": "http://www.wikidata.org/entity/"

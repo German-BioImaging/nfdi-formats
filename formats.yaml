@@ -1,0 +1,91 @@
+file_formats:
+
+
+  - name: Zarr
+    handle: zarr
+    description: Specification for storage of large N-dimensional typed arrays
+    homepage: https://zarr.dev/
+    # base_format: None
+    mime_types:
+      - TBD:
+        extra_info: https://github.com/zarr-developers/zarr-specs/issues/123
+    file_extensions:
+      - zarr
+    content: Hierarchy of JSON metadata with chunked binary arrays
+    wikidata: Q130377195
+    tags:
+      - n-d array
+
+
+  - name: OME-Zarr
+    handle: ome-zarr
+    description: optimized for storying, viewing, & sharing large images
+    base_format: zarr
+    # mime_types inheritance may not be possible in YAML-LD, so we repeat it here
+    mime_types:
+      - TBD:
+        extra_info: https://github.com/zarr-developers/zarr-specs/issues/123
+    # same for file_extensions
+    file_extensions:
+      - zarr
+      - ome.zarr
+    content: Domain-specific metadata & data layout for Zarr
+    wikidata: Q126596270
+    tags:
+      - image
+
+
+  - name: Tag Image File Format
+    handle: tiff
+    description: an image file format for storing raster graphics images
+    homepage: https://www.loc.gov/preservation/digital/formats/fdd/fdd000022.shtml
+    # base_format: None
+    mime_types:
+      - image/tiff
+    file_extensions:
+      - tiff
+      - tif
+      - btf
+    content: a single binary with a header that points to one or more directories of tagged metadata entries
+    wikidata: Q215106
+    tags:
+      - image
+
+
+  - name: OME-TIFF
+    handle: ome-tiff
+    description: optimized for storying, viewing, & sharing large images
+    base_format: tiff
+    # mime_type inheritance may not be possible in YAML-LD, so we repeat it here
+    mime_types:
+      - image/tiff
+    # same for file_extensions
+    file_extensions:
+      - tiff
+      - tif
+      - btf
+    content: Domain-specific metadata & data layout for TIFF
+    wikidata: Q29167443
+    tags:
+      - image
+
+
+# YAML-LD context
+
+"@context":
+  "@vocab": "https://schema.org/"
+  "@base": "https://example.org/nfdi_formats/"
+  handle:
+    "@id": "@id"
+  file_formats: "https://schema.org/hasPart"
+  base_format: "https://schema.org/isBasedOn"
+  mime_types: "https://schema.org/encodingFormat"
+  tags: "https://schema.org/keywords"
+  extra_info: "http://www.w3.org/2000/01/rdf-schema#seeAlso"
+  content: "https://schema.org/description"
+  wikidata:
+    "@id": "https://schema.org/sameAs"
+    "@type": "@id"
+    "@context":
+      "@base": "http://www.wikidata.org/entity/"
+  file_extensions: "http://www.wikidata.org/entity/P1195" # omit the leading dot
