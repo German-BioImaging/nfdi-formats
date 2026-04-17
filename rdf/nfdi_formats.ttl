@@ -5,7 +5,8 @@
 
 ns2:nfdi4bioimage ns1:P2283 ns2:ome-tiff,
         ns2:ome-zarr ;
-    schema:name "NFDI4BioImage" .
+    schema:name "NFDI4BioImage" ;
+    schema:sameAs ns1:Q113500855 .
 
 ns2:tiff ns1:P1195 "btf",
         "tif",
