@@ -1,4 +1,11 @@
-from pprint import pprint
+# /// script
+# requires-python = ">=3.12"
+# dependencies = [
+#     "rdflib",
+#     "pyld == 2.0.4",
+#     "yaml-ld == 1.1.18",
+# ]
+# ///
 import rdflib
 import yaml_ld
 
