@@ -5,11 +5,11 @@ file_formats:
     handle: zarr
     description: Specification for storage of large N-dimensional typed arrays
     homepage: https://zarr.dev/
-    # base_format: None
-    mime_types:
+    # base: None
+    mimetypes:
       - TBD:
         extra_info: https://github.com/zarr-developers/zarr-specs/issues/123
-    file_extensions:
+    extensions:
       - zarr
     content: Hierarchy of JSON metadata with chunked binary arrays
     wikidata: Q130377195
@@ -20,13 +20,13 @@ file_formats:
   - name: OME-Zarr
     handle: ome-zarr
     description: optimized for storying, viewing, & sharing large images
-    base_format: zarr
-    # mime_types inheritance may not be possible in YAML-LD, so we repeat it here
-    mime_types:
+    base: zarr
+    # mimetypes inheritance may not be possible in YAML-LD, so we repeat it here
+    mimetypes:
       - TBD:
         extra_info: https://github.com/zarr-developers/zarr-specs/issues/123
-    # same for file_extensions
-    file_extensions:
+    # same for file extensions
+    extensions:
       - zarr
       - ome.zarr
     content: Domain-specific metadata & data layout for Zarr
@@ -39,10 +39,10 @@ file_formats:
     handle: tiff
     description: an image file format for storing raster graphics images
     homepage: https://www.loc.gov/preservation/digital/formats/fdd/fdd000022.shtml
-    # base_format: None
-    mime_types:
+    # base: None
+    mimetypes:
       - image/tiff
-    file_extensions:
+    extensions:
       - tiff
       - tif
       - btf
@@ -55,12 +55,12 @@ file_formats:
   - name: OME-TIFF
     handle: ome-tiff
     description: optimized for storying, viewing, & sharing large images
-    base_format: tiff
+    base: tiff
     # mime_type inheritance may not be possible in YAML-LD, so we repeat it here
-    mime_types:
+    mimetypes:
       - image/tiff
-    # same for file_extensions
-    file_extensions:
+    # same for extensions
+    extensions:
       - tiff
       - tif
       - btf
@@ -78,8 +78,8 @@ file_formats:
   handle:
     "@id": "@id"
   file_formats: "https://schema.org/hasPart"
-  base_format: "https://schema.org/isBasedOn"
-  mime_types: "https://schema.org/encodingFormat"
+  base: "https://schema.org/isBasedOn"
+  mimetypes: "https://schema.org/encodingFormat"
   tags: "https://schema.org/keywords"
   extra_info: "http://www.w3.org/2000/01/rdf-schema#seeAlso"
   content: "https://schema.org/description"
@@ -88,4 +88,4 @@ file_formats:
     "@type": "@id"
     "@context":
       "@base": "http://www.wikidata.org/entity/"
-  file_extensions: "http://www.wikidata.org/entity/P1195" # omit the leading dot
+  extensions: "http://www.wikidata.org/entity/P1195" # omit the leading dot
