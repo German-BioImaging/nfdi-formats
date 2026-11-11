@@ -1,8 +1,10 @@
 # /// script
 # requires-python = ">=3.12"
-# dependencies = [ "rdflib", "pyyaml" ]
+# dependencies = [ "rdflib", "pyyaml", "jsonschema" ]
 # ///
 from rdflib import Graph, URIRef
+from jsonschema import validate
+import sys
 import json
 import yaml
 import glob
@@ -16,12 +18,22 @@ for file in glob.glob("formats/*.yaml"):
     formats[id] = data
 
 # Check formats metadata
-for f in formats:
+schema = json.load(open("schema.json", "r"))
+
+def fail(message):
+    print(message, file=sys.stderr)
+    sys.exit(1)
+
+for id in formats:
+    try:
+        validate(instance=formats[id], schema=schema)
+    except Exception as e:
+        fail(f"formats/{id}.yaml is invalid!\n{e}")
     # base formats must exist and not be itself
-    if "base" in formats[f]:
-        base = formats[f]["base"]
-        if base is f or base not in formats:
-            raise ValueError(f"base '{base}' of {f} not found!")
+    if "base" in formats[id]:
+        base = formats[id]["base"]
+        if base is id or base not in formats:
+            fail(f"base '{base}' of formats/{id}.yaml not found!")
 
 # Convert to RDF
 data = yaml.safe_load(open("nfdi.yaml", "r"))

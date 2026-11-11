@@ -1,0 +1,52 @@
+{
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "content": {
+      "type": "string"
+    },
+    "handle": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$"
+    },
+    "base": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+$"
+    },
+    "wikidata": {
+      "type": "string",
+      "pattern": "^Q[0-9]+$"
+    },
+    "extensions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9.]+$"
+      }
+    },
+    "homepage": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https?://"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "mimetypes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z]+/[a-z]+$"
+      }
+    }
+  },
+  "additionalProperties": false
+}

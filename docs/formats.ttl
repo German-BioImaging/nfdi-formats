@@ -1,5 +1,4 @@
 @prefix ns1: <https://example.org/nfdi_formats/> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
 @prefix wd: <http://www.wikidata.org/entity/> .
 
@@ -53,7 +52,6 @@ ns1:ome-zarr wd:P1195 "ome.zarr",
     ns1:status "recommended" ;
     schema:description "Domain-specific metadata & data layout for Zarr",
         "optimized for storying, viewing, & sharing large images" ;
-    schema:encodingFormat [ rdfs:seeAlso "https://github.com/zarr-developers/zarr-specs/issues/123" ] ;
     schema:isBasedOn "zarr" ;
     schema:keywords "image" ;
     schema:name "OME-Zarr" ;

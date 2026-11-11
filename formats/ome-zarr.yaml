@@ -2,9 +2,9 @@ name: OME-Zarr
 description: optimized for storying, viewing, & sharing large images
 base: zarr
 # mimetypes inheritance may not be possible in YAML-LD, so we repeat it here
-mimetypes:
-  - TBD:
-    extra_info: https://github.com/zarr-developers/zarr-specs/issues/123
+#mimetypes:
+#  - TBD:
+#    extra_info: https://github.com/zarr-developers/zarr-specs/issues/123
 # same for file extensions
 extensions:
   - zarr
