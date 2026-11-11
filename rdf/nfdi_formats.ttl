@@ -1,14 +1,22 @@
-@prefix ns1: <http://www.wikidata.org/entity/> .
-@prefix ns2: <https://example.org/nfdi_formats/> .
+@prefix ns1: <https://example.org/nfdi_formats/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
+@prefix wd: <http://www.wikidata.org/entity/> .
 
-ns2:nfdi4bioimage ns1:P2283 ns2:ome-tiff,
-        ns2:ome-zarr ;
+ns1: schema:description "A list of NFDI organizations and the file formats they use." ;
+    schema:hasPart ns1:nfdi4bioimage,
+        ns1:ome-tiff,
+        ns1:ome-zarr,
+        ns1:tiff,
+        ns1:zarr ;
+    schema:name "NFDI organizations and the file formats they use" .
+
+ns1:nfdi4bioimage wd:P2283 ns1:ome-tiff,
+        ns1:ome-zarr ;
     schema:name "NFDI4BioImage" ;
-    schema:sameAs ns1:Q113500855 .
+    schema:sameAs wd:Q113500855 .
 
-ns2:tiff ns1:P1195 "btf",
+ns1:tiff wd:P1195 "btf",
         "tif",
         "tiff" ;
     schema:description "a single binary with a header that points to one or more directories of tagged metadata entries",
@@ -17,48 +25,38 @@ ns2:tiff ns1:P1195 "btf",
     schema:homepage "https://www.loc.gov/preservation/digital/formats/fdd/fdd000022.shtml" ;
     schema:keywords "image" ;
     schema:name "Tag Image File Format" ;
-    schema:sameAs ns1:Q215106 .
+    schema:sameAs wd:Q215106 .
 
-ns2:zarr ns1:P1195 "zarr" ;
+ns1:zarr wd:P1195 "zarr" ;
     schema:description "Hierarchy of JSON metadata with chunked binary arrays",
         "Specification for storage of large N-dimensional typed arrays" ;
-    schema:encodingFormat [ rdfs:seeAlso "https://github.com/zarr-developers/zarr-specs/issues/123" ] ;
     schema:homepage "https://zarr.dev/" ;
     schema:keywords "n-d array" ;
     schema:name "Zarr" ;
-    schema:sameAs ns1:Q130377195 .
+    schema:sameAs wd:Q130377195 .
 
-ns2:ome-tiff ns1:P1195 "btf",
+ns1:ome-tiff wd:P1195 "btf",
         "tif",
         "tiff" ;
-    ns2:status "acceptable" ;
+    ns1:status "acceptable" ;
     schema:description "Domain-specific metadata & data layout for TIFF",
         "optimized for storying, viewing, & sharing large images" ;
     schema:encodingFormat "image/tiff" ;
     schema:isBasedOn "tiff" ;
     schema:keywords "image" ;
     schema:name "OME-TIFF" ;
-    schema:sameAs ns1:Q29167443 ;
+    schema:sameAs wd:Q29167443 ;
     schema:seeAlso "https://doi.org/10.5281/zenodo.15479606" .
 
-ns2:ome-zarr ns1:P1195 "ome.zarr",
+ns1:ome-zarr wd:P1195 "ome.zarr",
         "zarr" ;
-    ns2:status "recommended" ;
+    ns1:status "recommended" ;
     schema:description "Domain-specific metadata & data layout for Zarr",
         "optimized for storying, viewing, & sharing large images" ;
     schema:encodingFormat [ rdfs:seeAlso "https://github.com/zarr-developers/zarr-specs/issues/123" ] ;
     schema:isBasedOn "zarr" ;
     schema:keywords "image" ;
     schema:name "OME-Zarr" ;
-    schema:sameAs ns1:Q126596270 ;
+    schema:sameAs wd:Q126596270 ;
     schema:seeAlso "https://doi.org/10.5281/zenodo.15479606" .
-
-[] schema:hasPart ns2:ome-tiff,
-        ns2:ome-zarr,
-        ns2:tiff,
-        ns2:zarr .
-
-[] schema:description "A list of NFDI organizations and the file formats they use." ;
-    schema:hasPart ns2:nfdi4bioimage ;
-    schema:name "NFDI organizations and the file formats they use" .
 

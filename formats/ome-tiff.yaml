@@ -1,0 +1,15 @@
+name: OME-TIFF
+description: optimized for storying, viewing, & sharing large images
+base: tiff
+# mime_type inheritance may not be possible in YAML-LD, so we repeat it here
+mimetypes:
+  - image/tiff
+# same for extensions
+extensions:
+  - tiff
+  - tif
+  - btf
+content: Domain-specific metadata & data layout for TIFF
+wikidata: Q29167443
+tags:
+  - image

@@ -1,0 +1,25 @@
+{
+  "@vocab": "https://schema.org/",
+  "@base": "https://example.org/nfdi_formats/",
+  "handle": {
+    "@id": "@id"
+  },
+  "file_formats": "https://schema.org/hasPart",
+  "base": "https://schema.org/isBasedOn",
+  "mimetypes": "https://schema.org/encodingFormat",
+  "tags": "https://schema.org/keywords",
+  "extra_info": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+  "content": "https://schema.org/description",
+  "status": "https://example.org/nfdi_formats/status",
+  "reference_urls": "https://schema.org/seeAlso",
+  "organizations": "https://schema.org/hasPart",
+  "uses": "http://www.wikidata.org/entity/P2283",
+  "wikidata": {
+    "@id": "https://schema.org/sameAs",
+    "@type": "@id",
+    "@context": {
+      "@base": "http://www.wikidata.org/entity/"
+    }
+  },
+  "extensions": "http://www.wikidata.org/entity/P1195"
+}

@@ -1,2 +1,2 @@
-rdf/nfdi-formats.ttl: formats.yaml
+rdf/nfdi-formats.ttl: context.json to_rdf.py $(wildcard $(DIR)/formats/*.yaml)
 	pipx run to_rdf.py

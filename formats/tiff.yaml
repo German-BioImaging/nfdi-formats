@@ -1,0 +1,14 @@
+name: Tag Image File Format
+description: an image file format for storing raster graphics images
+homepage: https://www.loc.gov/preservation/digital/formats/fdd/fdd000022.shtml
+# base: None
+mimetypes:
+  - image/tiff
+extensions:
+  - tiff
+  - tif
+  - btf
+content: a single binary with a header that points to one or more directories of tagged metadata entries
+wikidata: Q215106
+tags:
+  - image

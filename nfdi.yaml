@@ -17,21 +17,3 @@ organizations:
         status: recommended
         reference_urls:
           - https://doi.org/10.5281/zenodo.15479606
-
-# YAML-LD context
-
-"@context":
-  "@vocab": https://schema.org/
-  "@base": https://example.org/nfdi_formats/
-  handle:
-    "@id": "@id"
-  reference_urls: "https://schema.org/seeAlso"
-  organizations: "https://schema.org/hasPart"
-  uses: http://www.wikidata.org/entity/P2283 # "uses"
-# status is local
-  status: https://example.org/nfdi_formats/status
-  wikidata:
-    "@id": "https://schema.org/sameAs"
-    "@type": "@id"
-    "@context":
-      "@base": "http://www.wikidata.org/entity/"

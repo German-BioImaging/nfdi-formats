@@ -1,0 +1,13 @@
+name: Zarr
+description: Specification for storage of large N-dimensional typed arrays
+homepage: https://zarr.dev/
+# base: None
+#mimetypes:
+#  - TBD:
+#    extra_info: https://github.com/zarr-developers/zarr-specs/issues/123
+extensions:
+  - zarr
+content: Hierarchy of JSON metadata with chunked binary arrays
+wikidata: Q130377195
+tags:
+  - n-d array
